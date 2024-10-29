@@ -942,7 +942,10 @@ dsl_fs_ss_count_adjust(dsl_dir_t *dd, int64_t delta, const char *prop,
 
 	count += delta;
 	/* Use a signed verify to make sure we're not neg. */
-	VERIFY3S(count, >=, 0);
+	/* @helamonster : Comment this verify out to avoid a zfs module crash when destroying defunct datasets.
+ 	   See: https://github.com/openzfs/zfs/issues/10698
+     	*/
+ 	// VERIFY3S(count, >=, 0);
 
 	VERIFY0(zap_update(os, dd->dd_object, prop, sizeof (count), 1, &count,
 	    tx));
