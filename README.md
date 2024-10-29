@@ -1,3 +1,5 @@
+NOTE: This fork is for building a version of ZFS that can destroy old defunct datasets without crashing. It is meant to be used temporarily to destroy those datasets and not intented to be used in normal system operation. See https://github.com/openzfs/zfs/issues/10698 for details.
+
 ![img](https://openzfs.github.io/openzfs-docs/_static/img/logo/480px-Open-ZFS-Secondary-Logo-Colour-halfsize.png)
 
 OpenZFS is an advanced file system and volume manager which was originally
